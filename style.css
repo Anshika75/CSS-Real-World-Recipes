@@ -24,11 +24,11 @@ body::before {
   z-index: -1;
 }
 
-/* Dark mode uses warmer background pattern */
+/* Updated dark mode background pattern to use pink-red gradient instead of orange */
 [data-theme="dark"] body::before {
-  background: radial-gradient(circle at 20% 50%, rgba(249, 115, 22, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(251, 146, 60, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(251, 191, 36, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(239, 68, 68, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(219, 39, 119, 0.05) 0%, transparent 50%);
 }
 
 /* Added theme toggle button styling */
@@ -336,10 +336,10 @@ body::before {
   transition: all var(--transition-fast);
 }
 
-/* Dark mode tags use warm orange colors */
+/* Updated dark mode tags to use pink-red gradient instead of orange */
 [data-theme="dark"] .tag {
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(251, 146, 60, 0.1));
-  border-color: rgba(249, 115, 22, 0.2);
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(239, 68, 68, 0.1));
+  border-color: rgba(236, 72, 153, 0.2);
 }
 
 /* Enhanced footer with additional info */
