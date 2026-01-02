@@ -1,10 +1,10 @@
 :root {
   /* Colors */
-  /* Light mode colors - Warm palette */
-  --color-primary: #f97316;
-  --color-primary-dark: #ea580c;
-  --color-secondary: #fb923c;
-  --color-accent: #fbbf24;
+  /* Light mode colors - Softer, more neutral palette with warm accents */
+  --color-primary: #14b8a6; /* Teal as primary instead of orange */
+  --color-primary-dark: #0f766e;
+  --color-secondary: #06b6d4; /* Cyan for secondary */
+  --color-accent: #f59e0b; /* Amber as accent */
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-danger: #ef4444;
@@ -12,26 +12,26 @@
   /* Neutrals */
   /* Neutrals - Light mode */
   --color-white: #ffffff;
-  --color-gray-50: #fafaf9;
-  --color-gray-100: #f5f5f4;
-  --color-gray-200: #e7e5e4;
-  --color-gray-300: #d6d3d1;
-  --color-gray-400: #a8a29e;
-  --color-gray-500: #78716c;
-  --color-gray-600: #57534e;
-  --color-gray-700: #44403c;
-  --color-gray-800: #292524;
-  --color-gray-900: #1c1917;
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
   --color-black: #000000;
 
-  /* Semantic tokens for theming */
+  /* Semantic tokens for cleaner light mode */
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #fafaf9;
-  --color-bg-tertiary: #f5f5f4;
-  --color-text-primary: #1c1917;
-  --color-text-secondary: #57534e;
-  --color-text-muted: #78716c;
-  --color-border: #e7e5e4;
+  --color-bg-secondary: #f8fafc;
+  --color-bg-tertiary: #f1f5f9;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
   --color-card-bg: #ffffff;
   --color-card-border: transparent;
 
@@ -78,7 +78,7 @@
 
 /* Dark mode theme */
 [data-theme="dark"] {
-  /* Dark mode color adjustments */
+  /* Dark mode keeps warm orange palette */
   --color-primary: #fb923c;
   --color-primary-dark: #f97316;
   --color-secondary: #fdba74;
