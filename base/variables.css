@@ -1,13 +1,16 @@
 :root {
   /* Colors */
-  /* Light mode colors - Softer, more neutral palette with warm accents */
-  --color-primary: #14b8a6; /* Teal as primary instead of orange */
-  --color-primary-dark: #0f766e;
-  --color-secondary: #06b6d4; /* Cyan for secondary */
-  --color-accent: #f59e0b; /* Amber as accent */
+  /* Added pink-red gradient as primary color for light mode */
+  --color-primary: #ec4899; /* Pink */
+  --color-primary-dark: #db2777; /* Deeper pink */
+  --color-secondary: #ef4444; /* Red */
+  --color-accent: #06b6d4; /* Cyan as accent */
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-danger: #ef4444;
+
+  /* Gradient definition for primary pink-red gradient */
+  --gradient-primary: linear-gradient(135deg, #ec4899, #ef4444);
 
   /* Neutrals */
   /* Neutrals - Light mode */
@@ -78,11 +81,14 @@
 
 /* Dark mode theme */
 [data-theme="dark"] {
-  /* Dark mode keeps warm orange palette */
+  /* Dark mode keeps warm orange palette as requested */
   --color-primary: #fb923c;
   --color-primary-dark: #f97316;
   --color-secondary: #fdba74;
   --color-accent: #fcd34d;
+
+  /* Gradient for dark mode */
+  --gradient-primary: linear-gradient(135deg, #fb923c, #fdba74);
 
   /* Dark mode semantics */
   --color-bg-primary: #0c0a09;
