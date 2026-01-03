@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Grid - CSS Recipe</title>
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/variables.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Added dark mode toggle and back button -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <span class="sun">☀️</span>
+    <span class="moon">🌙</span>
+  </button>
+
+  <div class="container">
+    <a href="../../index.html" class="back-button">← Back to Recipes</a>
+    
+    <header class="page-header">
+      <h1>Responsive Grid Layout</h1>
+      <p>Auto-fitting grid that adapts to screen size without media queries</p>
+    </header>
+
+    <!-- Added interactive controls -->
+    <div class="controls">
+      <div class="control-group">
+        <label for="minWidth">Minimum Item Width:</label>
+        <input type="range" id="minWidth" min="150" max="400" value="250" step="10">
+        <span id="minWidthValue">250px</span>
+      </div>
+      <div class="control-group">
+        <label for="gapSize">Gap Size:</label>
+        <input type="range" id="gapSize" min="8" max="48" value="24" step="4">
+        <span id="gapSizeValue">24px</span>
+      </div>
+      <div class="control-group">
+        <label>
+          <input type="checkbox" id="autoFillToggle">
+          Use <code>auto-fill</code> instead of <code>auto-fit</code>
+        </label>
+      </div>
+    </div>
+
+    <!-- Added code example section -->
+    <div class="code-section">
+      <h2>The CSS</h2>
+      <pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}</code></pre>
+      <p class="code-explanation">
+        <strong>How it works:</strong> The <code>auto-fit</code> keyword automatically fits as many columns as possible, 
+        while <code>minmax(250px, 1fr)</code> ensures each item is at least 250px wide but can grow to fill available space.
+        Try <code>auto-fill</code> to see the difference - it keeps ghost columns!
+      </p>
+    </div>
+    
+    <div class="grid" id="demoGrid">
+      <!-- Enhanced grid items with icons and more content -->
+      <div class="grid-item">
+        <div class="item-icon">📱</div>
+        <h3>Responsive</h3>
+        <p>Grid items automatically wrap and resize based on available space without any media queries.</p>
+      </div>
+      <div class="grid-item">
+        <div class="item-icon">⚡</div>
+        <h3>No Media Queries</h3>
+        <p>Achieve responsive layouts purely with CSS Grid, eliminating the need for breakpoint management.</p>
+      </div>
+      <div class="grid-item">
+        <div class="item-icon">🎯</div>
+        <h3>Auto-fit Magic</h3>
+        <p>Uses CSS Grid's auto-fit and minmax functions to intelligently adjust column counts.</p>
+      </div>
+      <div class="grid-item">
+        <div class="item-icon">🔄</div>
+        <h3>Consistent Gaps</h3>
+        <p>Maintains equal spacing between items regardless of how many fit per row.</p>
+      </div>
+      <div class="grid-item">
+        <div class="item-icon">🎨</div>
+        <h3>Try It Out</h3>
+        <p>Resize your browser window or adjust the controls above to see the grid adapt in real-time!</p>
+      </div>
+      <div class="grid-item">
+        <div class="item-icon">💼</div>
+        <h3>Perfect For</h3>
+        <p>Card layouts, dashboards, image galleries, product grids, and blog post listings.</p>
+      </div>
+      <div class="grid-item">
+        <div class="item-icon">🚀</div>
+        <h3>Modern CSS</h3>
+        <p>Leverages the power of CSS Grid with excellent browser support across all modern browsers.</p>
+      </div>
+      <div class="grid-item">
+        <div class="item-icon">✨</div>
+        <h3>Clean Code</h3>
+        <p>Achieves complex responsive behavior with just a single line of CSS. Simple yet powerful!</p>
+      </div>
+    </div>
+
+    <!-- Added comparison section -->
+    <div class="comparison-section">
+      <h2>auto-fit vs auto-fill</h2>
+      <div class="comparison-grid">
+        <div class="comparison-item">
+          <h3>auto-fit</h3>
+          <p>Collapses empty tracks and stretches items to fill the available space. Best for fluid layouts where you want items to grow.</p>
+        </div>
+        <div class="comparison-item">
+          <h3>auto-fill</h3>
+          <p>Keeps ghost columns even if empty, preventing items from stretching too wide. Best when you want to maintain consistent sizing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Added JavaScript for interactivity -->
+  <script>
+    // Dark mode toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Interactive controls
+    const demoGrid = document.getElementById('demoGrid');
+    const minWidthInput = document.getElementById('minWidth');
+    const minWidthValue = document.getElementById('minWidthValue');
+    const gapSizeInput = document.getElementById('gapSize');
+    const gapSizeValue = document.getElementById('gapSizeValue');
+    const autoFillToggle = document.getElementById('autoFillToggle');
+
+    minWidthInput.addEventListener('input', (e) => {
+      const value = e.target.value;
+      minWidthValue.textContent = `${value}px`;
+      updateGrid();
+    });
+
+    gapSizeInput.addEventListener('input', (e) => {
+      const value = e.target.value;
+      gapSizeValue.textContent = `${value}px`;
+      demoGrid.style.gap = `${value}px`;
+    });
+
+    autoFillToggle.addEventListener('change', () => {
+      updateGrid();
+    });
+
+    function updateGrid() {
+      const minWidth = minWidthInput.value;
+      const autoValue = autoFillToggle.checked ? 'auto-fill' : 'auto-fit';
+      demoGrid.style.gridTemplateColumns = `repeat(${autoValue}, minmax(${minWidth}px, 1fr))`;
+    }
+  </script>
+</body>
+</html>
