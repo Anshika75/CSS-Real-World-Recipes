@@ -1,22 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Footer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Footer - CSS Recipe</title>
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/variables.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Sticky Footer Example</h1>
+  <div class="page-container">
+    <header class="header">
+      <!-- Added back button to return to main page -->
+      <a href="../../index.html" class="back-button">← Back to Recipes</a>
+      <h1>Sticky Footer Layout</h1>
+      <p>The footer stays at the bottom of the page, even with minimal content</p>
     </header>
     
-    <main>
-        <p>Content goes here...</p>
+    <main class="main-content">
+      <section class="demo-section">
+        <h2>Main Content Area</h2>
+        <p>This content area can grow as needed. The footer will always stick to the bottom of the viewport when content is short, or appear after all content when the page is long.</p>
+        <p>Try resizing your browser window to see how it works!</p>
+        
+        <!-- Added interactive demo with code example -->
+        <div class="code-example">
+          <h3>The CSS Technique</h3>
+          <pre><code>.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;  /* Grows to fill space */
+}
+
+.footer {
+  margin-top: auto;  /* Pushes to bottom */
+}</code></pre>
+        </div>
+
+        <!-- Added content toggle button -->
+        <div class="demo-controls">
+          <button class="toggle-button" onclick="toggleContent()">Toggle Content Amount</button>
+          <p class="hint">Click to see how the footer behaves with different content heights</p>
+        </div>
+
+        <div id="extraContent" class="extra-content" style="display: none;">
+          <h3>Additional Content</h3>
+          <p>When you have more content, the footer naturally moves down and appears after all the content. This is the beauty of the flexbox sticky footer technique!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </section>
     </main>
     
-    <footer>
-        <p>&copy; 2026 Sticky Footer</p>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <span>•</span>
+          <a href="#">Terms</a>
+          <span>•</span>
+          <a href="#">Contact</a>
+        </div>
+        <p>&copy; 2026 CSS Real World Recipes. All rights reserved.</p>
+      </div>
     </footer>
+  </div>
+
+  <!-- Added JavaScript for interactive demo -->
+  <script>
+    function toggleContent() {
+      const extraContent = document.getElementById('extraContent');
+      if (extraContent.style.display === 'none') {
+        extraContent.style.display = 'block';
+      } else {
+        extraContent.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
