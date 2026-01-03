@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Added dark mode toggle button -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <span class="sun">☀️</span>
+    <span class="moon">🌙</span>
+  </button>
+
   <div class="page-container">
     <header class="header">
       <!-- Added back button to return to main page -->
@@ -72,8 +78,23 @@
     </footer>
   </div>
 
-  <!-- Added JavaScript for interactive demo -->
+  <!-- Added dark mode toggle JavaScript -->
   <script>
+    // Dark mode functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Content toggle functionality
     function toggleContent() {
       const extraContent = document.getElementById('extraContent');
       if (extraContent.style.display === 'none') {
