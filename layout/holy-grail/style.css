@@ -114,29 +114,48 @@ body::before {
   padding-top: 4rem;
 }
 
-/* Intro section */
-.intro {
+.header {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  padding: var(--space-2xl);
   text-align: center;
-  margin-bottom: 3rem;
+  position: relative;
 }
 
-.intro h1 {
-  font-size: 3rem;
+/* Updated back button styling to match main page */
+.back-button {
+  position: absolute;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  color: white;
+  text-decoration: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-base);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(-4px);
+}
+
+.header h1 {
+  font-size: var(--text-3xl);
   font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-sm);
 }
 
-.intro p {
-  font-size: 1.25rem;
-  color: var(--text-color);
-  opacity: 0.8;
-  max-width: 700px;
-  margin: 0 auto;
+.header p {
+  font-size: var(--text-lg);
+  opacity: 0.9;
 }
+
 
 /* Controls */
 .controls {
