@@ -131,6 +131,13 @@ body::before {
   opacity: 0.9;
 }
 
+.main-content {
+  flex: 1;
+  padding: var(--space-2xl);
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
 /* Added interactive controls section */
 .controls {
   background: var(--color-card-bg);
