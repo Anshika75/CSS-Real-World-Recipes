@@ -1,111 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Holy Grail Layout - CSS Recipes</title>
-  <link rel="stylesheet" href="../../base/reset.css">
-  <link rel="stylesheet" href="../../base/variables.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail Layout - CSS Recipes</title>
+    <link rel="stylesheet" href="../../base/reset.css">
+    <link rel="stylesheet" href="../../base/variables.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-    <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
-      <line x1="10" y1="2" x2="10" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="10" y1="16" x2="10" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="18" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="4" y1="10" x2="2" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="15.6569" y1="4.34315" x2="14.2426" y2="5.75736" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="5.75736" y1="14.2426" x2="4.34315" y2="15.6569" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="15.6569" y1="15.6569" x2="14.2426" y2="14.2426" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="5.75736" y1="5.75736" x2="4.34315" y2="4.34315" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-    <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17 10.5C16.8 14.6 13.4 18 9.3 18C5.7 18 2.7 15.4 2.1 12C2 11.5 2.4 11 2.9 11C3.3 11 3.7 11.1 4.1 11.1C7.3 11.1 9.9 8.5 9.9 5.3C9.9 4.9 9.8 4.5 9.8 4.1C9.8 3.6 10.3 3.2 10.8 3.3C14.2 3.9 16.8 6.9 17 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2" />
+            <line x1="10" y1="2" x2="10" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <line x1="10" y1="16" x2="10" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <line x1="18" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <line x1="4" y1="10" x2="2" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <line x1="15.6569" y1="4.34315" x2="14.2426" y2="5.75736" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" />
+            <line x1="5.75736" y1="14.2426" x2="4.34315" y2="15.6569" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" />
+            <line x1="15.6569" y1="15.6569" x2="14.2426" y2="14.2426" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" />
+            <line x1="5.75736" y1="5.75736" x2="4.34315" y2="4.34315" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" />
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17 10.5C16.8 14.6 13.4 18 9.3 18C5.7 18 2.7 15.4 2.1 12C2 11.5 2.4 11 2.9 11C3.3 11 3.7 11.1 4.1 11.1C7.3 11.1 9.9 8.5 9.9 5.3C9.9 4.9 9.8 4.5 9.8 4.1C9.8 3.6 10.3 3.2 10.8 3.3C14.2 3.9 16.8 6.9 17 10.5Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
 
-  <a href="../../index.html" class="back-button">← Back to Home</a>
+    <a href="../../index.html" class="back-button">← Back to Home</a>
 
-  <div class="container">
-    <div class="intro">
-      <h1>Holy Grail Layout</h1>
-      <p>The classic layout pattern with header, footer, and three-column content area that adapts responsively.</p>
-    </div>
-
-    <div class="controls">
-      <h2>Interactive Demo</h2>
-      <p>Resize your browser to see how the layout adapts from desktop to mobile.</p>
-      
-      <div class="control-group">
-        <button id="toggleSidebars" class="control-btn">Toggle Sidebars</button>
-        <button id="addContent" class="control-btn">Add Content</button>
-        <button id="clearContent" class="control-btn">Clear Content</button>
-      </div>
-    </div>
-
-    <div class="demo-wrapper">
-      <div class="holy-grail">
-        <header class="hg-header">
-          <h2>Header</h2>
-          <p>Fixed at the top</p>
-        </header>
-
-        <div class="hg-body">
-          <aside class="hg-sidebar hg-left" id="leftSidebar">
-            <h3>Left Sidebar</h3>
-            <nav>
-              <ul>
-                <li><a href="#">Navigation 1</a></li>
-                <li><a href="#">Navigation 2</a></li>
-                <li><a href="#">Navigation 3</a></li>
-                <li><a href="#">Navigation 4</a></li>
-              </ul>
-            </nav>
-          </aside>
-
-          <main class="hg-main" id="mainContent">
-            <h3>Main Content Area</h3>
-            <p>This is the primary content area that expands to fill available space.</p>
-            <p>The Holy Grail layout ensures that:</p>
-            <ul>
-              <li>The header and footer span the full width</li>
-              <li>The main content is fluid and takes available space</li>
-              <li>Sidebars have fixed or flexible widths</li>
-              <li>On mobile, columns stack vertically</li>
-              <li>The footer stays at the bottom even with minimal content</li>
-            </ul>
-            <div class="content-card">
-              <h4>Flexible Content</h4>
-              <p>Add more content using the controls above to see how the layout adapts.</p>
-            </div>
-          </main>
-
-          <aside class="hg-sidebar hg-right" id="rightSidebar">
-            <h3>Right Sidebar</h3>
-            <div class="widget">
-              <h4>Widget 1</h4>
-              <p>Additional information or tools</p>
-            </div>
-            <div class="widget">
-              <h4>Widget 2</h4>
-              <p>More sidebar content</p>
-            </div>
-          </aside>
+    <header class="header">
+        <!-- Added back button to return to main page -->
+        <a href="../../index.html" class="back-button">← Back to Home</a>
+        <h1>Responsive Grid Layout</h1>
+        <p>Auto-fitting grid that adapts to screen size without media queries</p>
+    </header>
+    <div class="container">
+        <div class="intro">
+            <h1>Holy Grail Layout</h1>
+            <p>The classic layout pattern with header, footer, and three-column content area that adapts responsively.
+            </p>
         </div>
 
-        <footer class="hg-footer">
-          <p>Footer - Always at the bottom</p>
-        </footer>
-      </div>
-    </div>
+        <div class="controls">
+            <h2>Interactive Demo</h2>
+            <p>Resize your browser to see how the layout adapts from desktop to mobile.</p>
 
-    <section class="explanation">
-      <h2>How It Works</h2>
-      <div class="code-example">
-        <h3>CSS Structure</h3>
-        <pre><code>/* Container uses flexbox for vertical stacking */
+            <div class="control-group">
+                <button id="toggleSidebars" class="control-btn">Toggle Sidebars</button>
+                <button id="addContent" class="control-btn">Add Content</button>
+                <button id="clearContent" class="control-btn">Clear Content</button>
+            </div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="holy-grail">
+                <header class="hg-header">
+                    <h2>Header</h2>
+                    <p>Fixed at the top</p>
+                </header>
+
+                <div class="hg-body">
+                    <aside class="hg-sidebar hg-left" id="leftSidebar">
+                        <h3>Left Sidebar</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Navigation 1</a></li>
+                                <li><a href="#">Navigation 2</a></li>
+                                <li><a href="#">Navigation 3</a></li>
+                                <li><a href="#">Navigation 4</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                    <main class="hg-main" id="mainContent">
+                        <h3>Main Content Area</h3>
+                        <p>This is the primary content area that expands to fill available space.</p>
+                        <p>The Holy Grail layout ensures that:</p>
+                        <ul>
+                            <li>The header and footer span the full width</li>
+                            <li>The main content is fluid and takes available space</li>
+                            <li>Sidebars have fixed or flexible widths</li>
+                            <li>On mobile, columns stack vertically</li>
+                            <li>The footer stays at the bottom even with minimal content</li>
+                        </ul>
+                        <div class="content-card">
+                            <h4>Flexible Content</h4>
+                            <p>Add more content using the controls above to see how the layout adapts.</p>
+                        </div>
+                    </main>
+
+                    <aside class="hg-sidebar hg-right" id="rightSidebar">
+                        <h3>Right Sidebar</h3>
+                        <div class="widget">
+                            <h4>Widget 1</h4>
+                            <p>Additional information or tools</p>
+                        </div>
+                        <div class="widget">
+                            <h4>Widget 2</h4>
+                            <p>More sidebar content</p>
+                        </div>
+                    </aside>
+                </div>
+
+                <footer class="hg-footer">
+                    <p>Footer - Always at the bottom</p>
+                </footer>
+            </div>
+        </div>
+
+        <section class="explanation">
+            <h2>How It Works</h2>
+            <div class="code-example">
+                <h3>CSS Structure</h3>
+                <pre><code>/* Container uses flexbox for vertical stacking */
 .holy-grail {
   display: flex;
   flex-direction: column;
@@ -134,109 +150,110 @@
     flex-direction: column;
   }
 }</code></pre>
-      </div>
+            </div>
 
-      <div class="benefits">
-        <h3>Key Benefits</h3>
-        <div class="benefit-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">📱</div>
-            <h4>Responsive</h4>
-            <p>Automatically adapts from desktop to mobile layouts</p>
-          </div>
-          <div class="benefit-card">
-            <div class="benefit-icon">🎯</div>
-            <h4>Semantic</h4>
-            <p>HTML structure matches visual layout order</p>
-          </div>
-          <div class="benefit-card">
-            <div class="benefit-icon">⚡</div>
-            <h4>Flexible</h4>
-            <p>Content areas grow and shrink as needed</p>
-          </div>
-          <div class="benefit-card">
-            <div class="benefit-icon">🔧</div>
-            <h4>Easy to Customize</h4>
-            <p>Simple CSS modifications for different variations</p>
-          </div>
-        </div>
-      </div>
+            <div class="benefits">
+                <h3>Key Benefits</h3>
+                <div class="benefit-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📱</div>
+                        <h4>Responsive</h4>
+                        <p>Automatically adapts from desktop to mobile layouts</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <h4>Semantic</h4>
+                        <p>HTML structure matches visual layout order</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <h4>Flexible</h4>
+                        <p>Content areas grow and shrink as needed</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔧</div>
+                        <h4>Easy to Customize</h4>
+                        <p>Simple CSS modifications for different variations</p>
+                    </div>
+                </div>
+            </div>
 
-      <div class="use-cases">
-        <h3>Common Use Cases</h3>
-        <ul>
-          <li><strong>Blogs & News Sites:</strong> Main content with navigation and widgets</li>
-          <li><strong>Admin Dashboards:</strong> Central workspace with side panels</li>
-          <li><strong>Documentation Sites:</strong> Content with table of contents and related links</li>
-          <li><strong>E-commerce:</strong> Product listings with filters and recommendations</li>
-        </ul>
-      </div>
-    </section>
-  </div>
+            <div class="use-cases">
+                <h3>Common Use Cases</h3>
+                <ul>
+                    <li><strong>Blogs & News Sites:</strong> Main content with navigation and widgets</li>
+                    <li><strong>Admin Dashboards:</strong> Central workspace with side panels</li>
+                    <li><strong>Documentation Sites:</strong> Content with table of contents and related links</li>
+                    <li><strong>E-commerce:</strong> Product listings with filters and recommendations</li>
+                </ul>
+            </div>
+        </section>
+    </div>
 
-  <script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-    const sunIcon = document.querySelector('.sun-icon');
-    const moonIcon = document.querySelector('.moon-icon');
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
 
-    function setTheme(theme) {
-      html.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      if (theme === 'dark') {
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'block';
-      } else {
-        sunIcon.style.display = 'block';
-        moonIcon.style.display = 'none';
-      }
-    }
+        function setTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (theme === 'dark') {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            } else {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        }
 
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(savedTheme);
 
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme') || 'light';
-      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
-    });
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme') || 'light';
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
 
-    // Interactive controls
-    const toggleSidebars = document.getElementById('toggleSidebars');
-    const addContent = document.getElementById('addContent');
-    const clearContent = document.getElementById('clearContent');
-    const leftSidebar = document.getElementById('leftSidebar');
-    const rightSidebar = document.getElementById('rightSidebar');
-    const mainContent = document.getElementById('mainContent');
+        // Interactive controls
+        const toggleSidebars = document.getElementById('toggleSidebars');
+        const addContent = document.getElementById('addContent');
+        const clearContent = document.getElementById('clearContent');
+        const leftSidebar = document.getElementById('leftSidebar');
+        const rightSidebar = document.getElementById('rightSidebar');
+        const mainContent = document.getElementById('mainContent');
 
-    let sidebarsVisible = true;
-    let contentCount = 0;
+        let sidebarsVisible = true;
+        let contentCount = 0;
 
-    toggleSidebars.addEventListener('click', () => {
-      sidebarsVisible = !sidebarsVisible;
-      leftSidebar.style.display = sidebarsVisible ? 'block' : 'none';
-      rightSidebar.style.display = sidebarsVisible ? 'block' : 'none';
-      toggleSidebars.textContent = sidebarsVisible ? 'Hide Sidebars' : 'Show Sidebars';
-    });
+        toggleSidebars.addEventListener('click', () => {
+            sidebarsVisible = !sidebarsVisible;
+            leftSidebar.style.display = sidebarsVisible ? 'block' : 'none';
+            rightSidebar.style.display = sidebarsVisible ? 'block' : 'none';
+            toggleSidebars.textContent = sidebarsVisible ? 'Hide Sidebars' : 'Show Sidebars';
+        });
 
-    addContent.addEventListener('click', () => {
-      contentCount++;
-      const newCard = document.createElement('div');
-      newCard.className = 'content-card';
-      newCard.innerHTML = `
+        addContent.addEventListener('click', () => {
+            contentCount++;
+            const newCard = document.createElement('div');
+            newCard.className = 'content-card';
+            newCard.innerHTML = `
         <h4>Dynamic Content ${contentCount}</h4>
         <p>This content was added dynamically. The layout automatically adjusts to accommodate new content while maintaining the holy grail structure.</p>
       `;
-      mainContent.appendChild(newCard);
-    });
+            mainContent.appendChild(newCard);
+        });
 
-    clearContent.addEventListener('click', () => {
-      const cards = mainContent.querySelectorAll('.content-card');
-      cards.forEach((card, index) => {
-        if (index > 0) card.remove();
-      });
-      contentCount = 0;
-    });
-  </script>
+        clearContent.addEventListener('click', () => {
+            const cards = mainContent.querySelectorAll('.content-card');
+            cards.forEach((card, index) => {
+                if (index > 0) card.remove();
+            });
+            contentCount = 0;
+        });
+    </script>
 </body>
+
 </html>
