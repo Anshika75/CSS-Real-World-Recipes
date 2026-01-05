@@ -79,6 +79,22 @@ body::before {
   transform: rotate(180deg);
 }
 
+.sun-icon {
+  display: block;
+}
+
+.moon-icon {
+  display: none;
+}
+
+[data-theme="dark"] .sun-icon {
+  display: none;
+}
+
+[data-theme="dark"] .moon-icon {
+  display: block;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
