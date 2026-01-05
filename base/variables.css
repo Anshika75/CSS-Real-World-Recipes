@@ -37,6 +37,10 @@
   --color-border: #e2e8f0;
   --color-card-bg: #ffffff;
   --color-card-border: transparent;
+  --color-surface: #f8fafc;
+  --color-foreground: #0f172a;
+  --color-cyan: #06b6d4;
+  --color-amber: #f59e0b;
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -60,6 +64,7 @@
   --text-2xl: 1.5rem;
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
 
   /* Borders */
   --radius-sm: 0.25rem;
@@ -101,6 +106,10 @@
   --color-border: #292524;
   --color-card-bg: #1c1917;
   --color-card-border: #292524;
+  --color-surface: #292524;
+  --color-foreground: #fafaf9;
+  --color-cyan: #06b6d4;
+  --color-amber: #f59e0b;
 
   /* Adjust shadows for dark mode */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
