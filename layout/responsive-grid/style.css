@@ -28,8 +28,6 @@ body::before {
     radial-gradient(circle at 40% 20%, rgba(219, 39, 119, 0.05) 0%, transparent 50%);
 }
 
-/* Added dark mode toggle */
-/* Updated theme toggle to use consistent color variables */
 .theme-toggle {
   position: fixed;
   top: var(--space-lg);
@@ -97,7 +95,6 @@ body::before {
   position: relative;
 }
 
-/* Updated back button styling to match main page */
 .back-button {
   position: absolute;
   top: var(--space-lg);
@@ -138,7 +135,7 @@ body::before {
   margin: 0 auto;
   width: 100%;
 }
-/* Added interactive controls section */
+
 .controls {
   background: var(--color-card-bg);
   border: 2px solid var(--color-card-border);
@@ -302,7 +299,6 @@ body::before {
   box-shadow: var(--shadow-md);
 }
 
-/* Added gradient accent on hover */
 .grid-item::before {
   content: "";
   position: absolute;
@@ -355,7 +351,6 @@ body::before {
   font-size: var(--text-sm);
 }
 
-/* Added comparison section */
 .comparison-section {
   background: var(--color-card-bg);
   border: 2px solid var(--color-card-border);
