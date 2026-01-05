@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Added dark mode toggle button -->
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
     <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
@@ -29,7 +28,6 @@
 
   <div class="page-container">
     <header class="header">
-      <!-- Added back button to return to main page -->
       <a href="../../index.html" class="back-button">← Back to Recipes</a>
       <h1>Sticky Footer Layout</h1>
       <p>The footer stays at the bottom of the page, even with minimal content</p>
@@ -40,8 +38,6 @@
         <h2>Main Content Area</h2>
         <p>This content area can grow as needed. The footer will always stick to the bottom of the viewport when content is short, or appear after all content when the page is long.</p>
         <p>Try resizing your browser window to see how it works!</p>
-        
-        <!-- Added interactive demo with code example -->
         <div class="code-example">
           <h3>The CSS Technique</h3>
           <pre><code>.page-container {
@@ -58,8 +54,6 @@
   margin-top: auto;  /* Pushes to bottom */
 }</code></pre>
         </div>
-
-        <!-- Added content toggle button -->
         <div class="demo-controls">
           <button class="toggle-button" onclick="toggleContent()">Toggle Content Amount</button>
           <p class="hint">Click to see how the footer behaves with different content heights</p>
@@ -90,9 +84,7 @@
     </footer>
   </div>
 
-  <!-- Added dark mode toggle JavaScript -->
   <script>
-    // Dark mode functionality
     const themeToggle = document.getElementById('themeToggle');
     const htmlElement = document.documentElement;
     
@@ -106,7 +98,6 @@
       localStorage.setItem('theme', newTheme);
     });
 
-    // Content toggle functionality
     function toggleContent() {
       const extraContent = document.getElementById('extraContent');
       if (extraContent.style.display === 'none') {
