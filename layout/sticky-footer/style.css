@@ -11,7 +11,6 @@ body {
   flex-direction: column;
 }
 
-/* Updated theme toggle to match main page styling */
 .theme-toggle {
   position: fixed;
   top: var(--space-lg);
@@ -75,7 +74,6 @@ body {
   position: relative;
 }
 
-/* Updated back button styling to match main page */
 .back-button {
   position: absolute;
   top: var(--space-lg);
@@ -117,7 +115,6 @@ body {
   width: 100%;
 }
 
-/* Updated demo section to match main page card styling */
 .demo-section {
   background: var(--color-card-bg);
   padding: var(--space-xl);
