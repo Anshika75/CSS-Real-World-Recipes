@@ -45,44 +45,85 @@ body::before {
   color: var(--color-primary);
 }
 
-/* Theme Toggle */
+/* Theme toggle button */
 .theme-toggle {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  width: 40px;
-  height: 40px;
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-full);
+  background: var(--color-card-bg);
+  border: 2px solid var(--color-border);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  color: var(--color-foreground);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  z-index: 1000;
+  color: var(--color-text-primary);
 }
 
 .theme-toggle:hover {
-  transform: rotate(15deg);
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: var(--shadow-xl);
   border-color: var(--color-primary);
 }
 
-.sun-icon {
-  display: block;
-}
-.moon-icon {
-  display: none;
+.theme-toggle-icon {
+  transition: transform 0.3s ease;
 }
 
-[data-theme="dark"] .sun-icon {
-  display: none;
-}
-[data-theme="dark"] .moon-icon {
-  display: block;
+.theme-toggle:active .theme-toggle-icon {
+  transform: rotate(180deg);
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--space-xl);
+}
+
+.header {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  padding: var(--space-2xl);
+  text-align: center;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  color: white;
+  text-decoration: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-base);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(-4px);
+}
+
+.header h1 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.header p {
+  font-size: var(--text-lg);
+  opacity: 0.9;
 }
 
 .hero {
