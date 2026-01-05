@@ -1,8 +1,7 @@
-/* updated to use unified pink-red theme variables and added dark mode support */
 body {
-  background: var(--color-background);
+  background: var(--color-bg-primary);
   font-family: var(--font-sans);
-  color: var(--color-foreground);
+  color: var(--color-text-primary);
   min-height: 100vh;
   position: relative;
 }
@@ -16,6 +15,13 @@ body::before {
     radial-gradient(circle at 80% 80%, rgba(239, 68, 68, 0.05) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
+}
+
+/* Dark mode background pattern matching main page */
+[data-theme="dark"] body::before {
+  background: radial-gradient(circle at 20% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(239, 68, 68, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(219, 39, 119, 0.05) 0%, transparent 50%);
 }
 
 .nav-header {
@@ -113,36 +119,36 @@ body::before {
 
 .gradient-border-card {
   position: relative;
-  background: var(--color-surface);
+  background: var(--color-card-bg);
   border-radius: var(--radius-xl);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Use border-box technique for more reliable gradient borders */
+  border: 2px solid transparent;
+  background-image: linear-gradient(var(--color-card-bg), var(--color-card-bg)),
+    linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 .gradient-border-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-xl);
 }
 
+/* Removed pseudo-element since we're using background-clip technique */
 .gradient-border-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-xl);
-  padding: 3px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  transition: opacity 0.3s ease;
+  display: none;
 }
 
-/* Variant Gradients */
-.gradient-border-card.gradient-cyan::before {
-  background: linear-gradient(135deg, var(--color-cyan), #0891b2);
+/* Variant Gradients using the same background-clip technique */
+.gradient-border-card.gradient-cyan {
+  background-image: linear-gradient(var(--color-card-bg), var(--color-card-bg)),
+    linear-gradient(135deg, var(--color-accent), #0891b2);
 }
 
-.gradient-border-card.gradient-amber::before {
-  background: linear-gradient(135deg, var(--color-amber), #d97706);
+.gradient-border-card.gradient-amber {
+  background-image: linear-gradient(var(--color-card-bg), var(--color-card-bg)),
+    linear-gradient(135deg, var(--color-warning), #d97706);
 }
 
 .card-content {
