@@ -85,7 +85,6 @@ body::before {
   transform: rotate(180deg);
 }
 
-/* Container */
 .container {
   margin: 0 auto;
   padding: 4rem;
@@ -99,7 +98,6 @@ body::before {
   position: relative;
 }
 
-/* Updated back button styling to match main page */
 .back-button {
   position: absolute;
   top: var(--space-lg);
@@ -133,8 +131,6 @@ body::before {
   opacity: 0.9;
 }
 
-
-/* Controls */
 .controls {
   background: var(--card-bg);
   border: 2px solid var(--border-color);
@@ -183,7 +179,6 @@ body::before {
   transform: translateY(0);
 }
 
-/* Demo wrapper */
 .demo-wrapper {
   background: var(--card-bg);
   border: 2px solid var(--border-color);
@@ -193,7 +188,6 @@ body::before {
   overflow: hidden;
 }
 
-/* Holy Grail Layout */
 .holy-grail {
   display: flex;
   flex-direction: column;
@@ -369,7 +363,6 @@ body::before {
   opacity: 0.8;
 }
 
-/* Explanation section */
 .explanation {
   margin-top: 3rem;
 }
