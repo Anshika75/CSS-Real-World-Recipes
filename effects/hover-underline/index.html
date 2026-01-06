@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Underline - CSS Recipe</title>
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/variables.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Added theme toggle and back button for consistency -->
+  <div class="header">
+    <a href="../../index.html" class="back-link">← Back to Recipes</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="sun-icon">☀️</span>
+      <span class="moon-icon">🌙</span>
+    </button>
+  </div>
+
+  <div class="container">
+    <h1 class="page-title">Hover Underline Effects</h1>
+    <p class="page-description">Smooth and elegant link hover animations</p>
+    
+    <section class="demo-section">
+      <h2>From Left</h2>
+      <nav>
+        <a href="#" class="link-left">About Us</a>
+        <a href="#" class="link-left">Services</a>
+        <a href="#" class="link-left">Portfolio</a>
+        <a href="#" class="link-left">Contact</a>
+      </nav>
+    </section>
+    
+    <section class="demo-section">
+      <h2>From Center</h2>
+      <nav>
+        <a href="#" class="link-center">About Us</a>
+        <a href="#" class="link-center">Services</a>
+        <a href="#" class="link-center">Portfolio</a>
+        <a href="#" class="link-center">Contact</a>
+      </nav>
+    </section>
+    
+    <section class="demo-section">
+      <h2>Gradient Underline</h2>
+      <nav>
+        <a href="#" class="link-gradient">About Us</a>
+        <a href="#" class="link-gradient">Services</a>
+        <a href="#" class="link-gradient">Portfolio</a>
+        <a href="#" class="link-gradient">Contact</a>
+      </nav>
+    </section>
+    
+    <section class="demo-section">
+      <h2>Double Line</h2>
+      <nav>
+        <a href="#" class="link-double">About Us</a>
+        <a href="#" class="link-double">Services</a>
+        <a href="#" class="link-double">Portfolio</a>
+        <a href="#" class="link-double">Contact</a>
+      </nav>
+    </section>
+
+    <!-- Added code explanation section -->
+    <section class="code-section">
+      <h2>How it works</h2>
+      <div class="code-explanation">
+        <h3>The Technique</h3>
+        <p>These underline effects use CSS pseudo-elements (<code>::after</code> or <code>::before</code>) with width transitions to create smooth hover animations. The underline is positioned absolutely below the link text and animated from 0 to 100% width on hover.</p>
+        <h3>Key Properties</h3>
+        <ul>
+          <li><code>position: absolute</code> - Position the underline relative to the link</li>
+          <li><code>bottom: 0</code> - Align underline to the bottom of the text</li>
+          <li><code>width: 0 → 100%</code> - Expand the underline on hover</li>
+          <li><code>transition</code> - Create smooth animation</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  </script>
+</body>
+</html>
